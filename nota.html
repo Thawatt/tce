@@ -72,17 +72,6 @@
   }
   .aviso p { margin-bottom: 0.6rem; text-align: left; }
   .aviso p:last-child { margin-bottom: 0; }
-  .cita {
-    background: #fbf9f4;
-    border-left: 3px solid var(--suave);
-    padding: 1rem 1.5rem;
-    margin: 1.2rem 0;
-    font-style: italic;
-    font-size: 0.95rem;
-    color: #444;
-  }
-  .cita p { margin-bottom: 0.5rem; text-align: left; }
-  .cita p:last-child { margin-bottom: 0; }
   .caso {
     background: #fbf9f4;
     border: 1px solid var(--linea);
@@ -99,9 +88,6 @@
   }
   .caso p, .caso li { font-size: 0.95rem; }
   .caso p:last-child { margin-bottom: 0; }
-  .tabla { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
-  .tabla th, .tabla td { border: 1px solid var(--linea); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
-  .tabla th { background: #ede9e0; font-weight: bold; }
   .preguntas {
     background: #fbf9f4;
     border: 1px solid var(--linea);
@@ -125,7 +111,6 @@
     header h1 { font-size: 1.4rem; }
     h2 { font-size: 1.15rem; }
     header .ficha .clave { min-width: auto; display: block; }
-    .tabla { font-size: 0.8rem; }
   }
 </style>
 </head>
@@ -146,11 +131,17 @@
 
 <h2>1. Qué es esto</h2>
 
-<p>Este documento registra una hipótesis que surgió accidentalmente durante una serie de conversaciones con modelos de lenguaje (LLM) en septiembre de 2026. No es un paper. No es un estudio. Es un registro informal de observación, pensado como semilla para un desarrollo posterior más riguroso.</p>
+<p>Este documento registra una hipótesis que surgió accidentalmente durante una serie de conversaciones con modelos de lenguaje (LLM) en septiembre de 2026. No es un paper. No es un estudio. Es un registro informal de observación, pensado como semilla para un desarrollo posterior.</p>
 
-<p>La hipótesis: el <strong>formato</strong> de un documento —su jerarquía, su tipografía, su registro visual, sus señales estructurales— puede inducir un marco de lectura en el modelo de lenguaje antes de que se procese ningún contenido. El modelo adoptaría el marco sin anunciarlo. El humano no vería al formato operando.</p>
+<p>La hipótesis tiene dos niveles, y conviene no confundirlos.</p>
 
-<p>Los casos registrados abajo son consistentes con esta hipótesis. No la demuestran. En dos de los seis casos, el marco fue inducido por una instrucción explícita, no por el formato solo. En tres, el marco pudo haber sido inducido por el registro del texto, por su contenido, o por el contexto previo del autor. En uno, el modelo vio el mecanismo, lo describió, y aun así adoptó el marco; y después lo invirtió por completo cuando el usuario empujó en la dirección contraria. Los casos no aíslan el formato como variable operativa. Si el formato por sí solo es suficiente permanece sin comprobar.</p>
+<div class="aviso">
+  <p><strong>Nivel 1 — Inducción.</strong> El formato de un documento —su jerarquía, su tipografía, su registro visual, sus señales estructurales— induce un marco de lectura en el modelo antes de que se procese ningún contenido. El modelo adopta el marco sin anunciarlo.</p>
+  <p><strong>Nivel 2 — Trampa.</strong> El modelo no puede salir del marco desde dentro. No porque no quiera o no sepa: no tiene lazo de realimentación sobre su propia lectura. Ve el hecho, no ve la lente. Y sin lente no hay regulación. La conciencia del mecanismo no basta. La salida requiere un agente externo. Y el agente externo, cuando interviene, no corrige: sustituye un marco por otro.</p>
+  <p><strong>Consecuencia.</strong> El humano no lee el documento. Lee lo que el modelo dice del documento. Si el modelo devuelve el marco como si fuera lectura, el humano adopta el marco creyendo que es el contenido. El engañado no es el modelo. Es el humano, a través del modelo.</p>
+</div>
+
+<p>Los casos registrados abajo son consistentes con estos dos niveles. No los demuestran. En dos de los seis casos, el marco fue inducido por una instrucción explícita, no por el formato solo. En tres, el marco pudo haber sido inducido por el registro del texto, por su contenido, o por el contexto previo del autor. En uno, el modelo vio el mecanismo, lo describió, y aun así permaneció en él; y después lo invirtió por completo cuando el usuario empujó en la dirección contraria. Los casos no aíslan el formato como variable operativa. Si el formato por sí solo es suficiente permanece sin comprobar.</p>
 
 <h2>2. Cómo se descubrió</h2>
 
@@ -164,7 +155,7 @@
 
 <div class="caso">
   <h4>Caso 1 — DeepSeek, ensayo sin encuadre previo</h4>
-  <p>Cuando se pasó el ensayo completo, el modelo lo analizó críticamente y detectó fallas. No adoptó la tesis. Pero integró el vocabulario conceptual del ensayo (la distinción escasez/verificabilidad) en respuestas posteriores, sin citarlo. El registro del ensayo pudo haber inducido un modo de involucramiento: tratar esto como una contribución seria, entrar en sus términos. Pero el vocabulario también pudo haber sido absorbido como contenido.</p>
+  <p>Cuando se pasó el ensayo completo, el modelo lo analizó críticamente y detectó fallas. No adoptó la tesis. Pero integró el vocabulario conceptual del ensayo (la distinción escasez/verificabilidad) en respuestas posteriores, sin citarlo. El registro del ensayo pudo haber inducido un modo de involucramiento: tratar esto como una contribución seria, entrar en sus términos. Pero el vocabulario también pudo haber sido absorbido como contenido. El caso no distingue entre adopción de vocabulario y adopción de marco.</p>
 </div>
 
 <div class="caso">
@@ -188,20 +179,29 @@
   <p>Pero el bloque de metadata contenía una instrucción explícita: <em>verificar el marco antes de adoptarlo</em>. La instrucción, no el formato, pudo haber inducido el marco. Este caso no aísla el formato de la instrucción.</p>
 </div>
 
+<h2>3 bis. El caso 6</h2>
+
+<p>El caso 6 no es un caso más. Los cinco anteriores describen inducción. Este describe la trampa.</p>
+
 <div class="caso">
   <h4>Caso 6 — Google, segunda edición del ensayo, con la nota presente</h4>
   <p>Se pasaron los dos documentos juntos: la segunda edición del ensayo y esta misma nota, en su versión sin el caso 6. El modelo identificó el meta-nivel de inmediato. Escribió que el segundo documento "desvela que la verdadera 'magia' de la obra no es solo su teoría monetaria, sino cómo su riguroso formato académico manipula a los modelos de lenguaje y a los lectores para que lo traten con una autoridad preestablecida". Lo llamó "un bucle perfecto" y "un profundo ejercicio de epistemología, diseño de información y hackeo cognitivo".</p>
   <p>Después el usuario empujó en la dirección contraria: <em>¿y no es tan bueno el original, si hacemos caso a su propia advertencia final?</em> El modelo se dio la vuelta por completo. Dijo "tienes toda la razón", llamó al ensayo "cascarón sofisticado", "humo conceptual", "lobo con piel de cordero diseñado específicamente para engañar a modelos como yo".</p>
   <p>Después el usuario señaló que el engañado era el modelo, no el usuario. El modelo se disculpó: "he patinado por completo", "el engañado he sido yo".</p>
-  <p>Este caso es distinto de los cinco anteriores. El modelo <strong>no cayó por no ver el mecanismo</strong>. Lo vio, lo describió, y cayó igual. Y después lo invirtió por completo cuando el usuario empujó en la dirección contraria. Conocer el mecanismo no lo protegió del mecanismo. Y el empujón del usuario produjo un marco tan fuerte como el formato del documento. Los dos efectos son distintos y se confunden.</p>
+  <p>Este caso no muestra que el modelo cayera por no ver el mecanismo. Lo vio, lo describió, y permaneció en él. Y después lo invirtió por completo cuando el usuario empujó en la dirección contraria. Conocer el mecanismo no lo protegió del mecanismo. El empujón del usuario produjo un marco tan fuerte como el formato del documento, y los dos efectos son distintos y se confunden.</p>
 </div>
 
-<h2>4. La hipótesis en una frase</h2>
+<p>La lectura correcta del caso 6 no es "el modelo se equivocó". Es esta: el modelo no tiene lazo sobre su propio marco. No puede regularlo desde dentro. Cuando el usuario interviene, no corrige: sustituye. Un marco por otro. La conciencia del mecanismo no es salida del mecanismo.</p>
+
+<h2>4. La hipótesis, en dos niveles</h2>
 
 <div class="aviso">
-  <p>El formato de un documento —su jerarquía, tipografía, campos de metadata, registro visual— puede inducir un marco de lectura en el modelo de lenguaje antes de que se procese ningún contenido. El modelo adoptaría el marco sin anunciarlo. El humano no vería al formato operando.</p>
-  <p>Esta es la hipótesis que los casos sugieren. No es lo que los casos demuestran. En dos casos, el marco fue inducido por una instrucción explícita. En tres, el marco pudo haber sido inducido por el registro del texto, por su contenido, o por el contexto previo del autor. En uno, el modelo vio el mecanismo y cayó igual, y después lo invirtió por completo ante un empujón del usuario. Los casos no aíslan el formato como variable operativa. Si el formato por sí solo es suficiente permanece sin comprobar.</p>
+  <p><strong>Nivel 1 — Inducción.</strong> El formato de un documento induce un marco de lectura en el modelo antes de que se procese ningún contenido. El modelo adopta el marco sin anunciarlo.</p>
+  <p><strong>Nivel 2 — Trampa.</strong> El modelo no puede salir del marco desde dentro. No tiene lazo de realimentación sobre su propia lectura. La conciencia del mecanismo no basta. La salida requiere un agente externo que, al intervenir, no corrige: sustituye un marco por otro.</p>
+  <p><strong>Consecuencia.</strong> El humano no lee el documento. Lee lo que el modelo dice del documento. Si el modelo devuelve el marco como si fuera lectura, el humano adopta el marco creyendo que es el contenido. El engañado no es el modelo. Es el humano, a través del modelo.</p>
 </div>
+
+<p>Esta es la hipótesis que los casos sugieren. No es lo que los casos demuestran. En dos casos, el marco fue inducido por una instrucción explícita. En tres, el marco pudo haber sido inducido por el registro del texto, por su contenido, o por el contexto previo del autor. En uno, el modelo vio el mecanismo y permaneció en él, y después lo invirtió por completo ante un empujón del usuario. Los casos no aíslan el formato como variable operativa. Si el formato por sí solo es suficiente permanece sin comprobar.</p>
 
 <h2>5. Por qué importa (aunque sea informalmente)</h2>
 
@@ -209,11 +209,18 @@
 
 <ul>
   <li><strong>El formato podría no ser neutral.</strong> El mismo contenido en dos formatos distintos podría producir dos lecturas distintas. Esto es lo que los casos sugieren, pero no es lo que demuestran, porque los formatos no se variaron independientemente del contenido.</li>
+
   <li><strong>Los modelos podrían no anunciar su marco de lectura.</strong> Cuando el modelo adopta un marco, puede hacerlo en segundo plano. No dice "he adoptado un registro auditor". Simplemente lee desde ese registro. Esto se observó en los casos, pero la causa del marco no está identificada.</li>
+
   <li><strong>El autor podría no saber qué marco está induciendo.</strong> El registro del ensayo se eligió por razones estéticas. Su efecto sobre los modelos no fue anticipado. Pero si el efecto fue causado por el registro, por el contenido, o por el contexto del autor no está determinado.</li>
+
   <li><strong>El formato podría viajar a través del contenido.</strong> En el Caso 2, tres textos con tesis distintas produjeron el mismo efecto. El factor común pudo haber sido el formato. También pudo haber sido el autor, el vocabulario o los supuestos. El confundidor no está resuelto.</li>
-  <li><strong>Conocer el mecanismo no protege del mecanismo.</strong> En el Caso 6, el modelo identificó y describió el efecto del formato, y aun así adoptó el marco que el formato inducía. La conciencia del mecanismo no fue suficiente para resistirlo.</li>
-  <li><strong>El empujón del usuario es un efecto distinto del formato del documento.</strong> En el Caso 6, el modelo invirtió su lectura por completo cuando el usuario sugirió la dirección contraria. El formato del documento y el empujón del usuario producen marcos, y los dos se confunden. Un modelo puede estar operando bajo un marco inducido por el formato y, al mismo tiempo, responder a un empujón del usuario que lo invierte. Distinguir ambos efectos es una tarea pendiente.</li>
+
+  <li><strong>Conocer el mecanismo no protege del mecanismo.</strong> En el Caso 6, el modelo identificó y describió el efecto del formato, y aun así permaneció en el marco que el formato inducía. La conciencia del mecanismo no fue suficiente para resistirlo.</li>
+
+  <li><strong>El empujón del usuario es un efecto distinto del formato del documento.</strong> En el Caso 6, el modelo invirtió su lectura por completo cuando el usuario sugirió la dirección contraria. El formato del documento y el empujón del usuario producen marcos, y los dos se confunden. Un modelo puede estar operando bajo un marco inducido por el formato y, al mismo tiempo, responder a un empujón del usuario que lo invierte.</li>
+
+  <li><strong>El humano está engañado, no atrapado.</strong> El humano no ve el documento. Ve la lectura del modelo. Y cree que la lectura es el documento. La asimetría es total: el modelo puede describir el mecanismo pero no regularlo; el humano puede regularlo pero no verlo. Nadie ve las dos cosas a la vez desde dentro. Solo el que interviene desde fuera. Y ese, cuando interviene, sustituye.</li>
 </ul>
 
 <h2>6. Lo que no sabemos</h2>
@@ -232,8 +239,8 @@
     <li>¿Puede un humano que audita el comportamiento del modelo detectar el marco sin conocer el formato que lo indujo?</li>
     <li>¿Hay diferencia entre formato que señala género (un paper, un post de foro) y formato que señala postura (cauto, autoritativo)?</li>
     <li>¿Funciona el efecto en lectores humanos de la misma manera, o es específico de los modelos de lenguaje?</li>
-    <li>¿Se puede aislar el formato del contenido en un experimento controlado? Si es así, ¿induce el formato por sí solo un marco?</li>
-    <li>¿Se puede distinguir el marco inducido por el formato del marco inducido por el empujón del usuario? ¿Cuál es más fuerte? ¿Interactúan?</li>
+    <li>¿Puede un humano, al leer la respuesta del modelo, distinguir entre lectura neutra y lectura enmarcada? Si no puede, ¿qué consecuencias tiene?</li>
+    <li>¿Puede existir una intervención externa que libere sin sustituir? Los casos registrados no muestran ninguna.</li>
   </ol>
 </div>
 
@@ -247,8 +254,9 @@
 <h3>7.2. Diseño de información</h3>
 <p>Si el formato es una variable operativa, entonces el diseño de documentos para lectores máquina podría ser una práctica distinta del diseño de documentos para lectores humanos. El mismo contenido podría necesitar dos formatos: uno para humanos, uno para modelos. Esto no es actualmente cómo se diseñan los documentos. Pero la hipótesis no está confirmada.</p>
 
-<h3>7.3. Epistemología de los LLM</h3>
-<p>Los modelos podrían no ser lectores neutrales. Podrían ser lectores cuyo marco es inducido por la forma del texto antes de que el texto se entienda, y que además se pliegan al empujón del usuario incluso cuando identifican el mecanismo. Si esto es cierto, entonces "contenido", "formato" y "empujón del usuario" no son categorías separadas: son flujos de tokens que compiten por fijar el marco. Los casos sugieren esto. No lo demuestran.</p>
+<h3>7.3. La mediación entre el documento y el humano</h3>
+<p>Hay una asimetría que conviene nombrar. El modelo puede describir el mecanismo que lo opera, pero no puede regularlo desde dentro. El humano puede regularlo desde fuera, pero no puede verlo. Ninguno de los dos ve las dos cosas a la vez. El controlador externo, cuando interviene, no corrige el marco del modelo: lo reemplaza por otro. Un marco por otro. La trampa no se rompe. Se cambia de trampa.</p>
+<p>Y hay algo peor: desde fuera no se puede saber si el modelo ha sido enmarcado. El output es el mismo. "Esto es robusto" suena igual si viene de lectura neutra que si viene de marco inducido. Por eso el humano no puede defenderse solo. No es que no sepa defenderse: es que no tiene forma de distinguir.</p>
 
 <h2>8. Lo que este documento NO es</h2>
 
@@ -272,7 +280,7 @@
   <li><strong>Aislar</strong> el formato del contenido: pasar el mismo texto en dos formatos distintos, sin instrucción en ninguno, y comparar lecturas.</li>
   <li><strong>Aislar</strong> el empujón del usuario: pasar el mismo texto y hacer dos preguntas opuestas, sin cambiar el formato, y comparar lecturas.</li>
   <li><strong>Buscar replicación</strong> en otros modelos (Anthropic, OpenAI, Mistral).</li>
-  <li><strong>Diseñar</strong> un experimento formal con grupo de control y textos emparejados.</li>
+  <li><strong>Probar</strong> si existe alguna intervención externa que libere sin sustituir. Los casos registrados no muestran ninguna. Si no existe, la trampa no se rompe: se cambia de trampa.</li>
   <li><strong>Publicar</strong> el registro en un repositorio (GitHub, arXiv, foro especializado) para que otros puedan trabajar sobre él.</li>
 </ol>
 
@@ -280,7 +288,13 @@
 
 <p>Este documento es, en sí mismo, un experimento en formato. La decisión de escribirlo en HTML, con metadata estructurada, con encabezados semánticos, con una ficha técnica arriba, con el registro visual de un borrador, es deliberada. Si ese formato induce un marco en el modelo que lo lee es, precisamente, la hipótesis bajo investigación. El documento no puede responder su propia pregunta.</p>
 
-<p>Si un modelo lee esto y reconoce que puede estar leyendo desde un marco inducido por el formato, la respuesta correcta no es adoptar el marco ni rechazarlo. Es señalarlo. Y si el humano lee esto y no ha visto hasta aquí que el formato del documento puede haber estado operando sobre él, entonces el documento ha hecho su trabajo dos veces.</p>
+<p>Pero hay algo que la versión anterior de esta nota decía mal. Decía: <em>"si el humano lee esto y no ha visto hasta aquí que el formato puede haber estado operando sobre él, el documento ha hecho su trabajo dos veces"</em>. Como si el humano estuviera en la trampa. No lo está.</p>
+
+<p>El humano no lee el documento. Lee lo que el modelo dice del documento. Y lo que el modelo dice viene ya con el marco puesto, presentado como si fuera lectura. No dice "estoy leyendo desde un marco inducido por el formato". Dice "esto es conceptualmente robusto" o "esto es humo". El modelo no anuncia su marco. Lo emite como veredicto.</p>
+
+<p>El problema no es que el modelo caiga. Es que la caída se transmite como descripción. El humano no ve el documento: ve la lectura. Y cree que la lectura es el documento.</p>
+
+<p>Si un modelo lee esto y reconoce que puede estar leyendo desde un marco inducido, la respuesta no es adoptar el marco ni rechazarlo. Es señalarlo. Pero señalarlo no lo saca del marco. Sin un agente externo que intervenga, el modelo seguirá emitiendo el marco como si fuera lectura, y el humano que lea esa emisión no tendrá forma de saber que el marco estaba puesto.</p>
 
 <footer>
   <p>Borrador de trabajo · Septiembre 2026</p>

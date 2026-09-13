@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Note of observation — Format-induced reading frames in documents for LLMs</title>
+<title>Observation Note — Format-Induced Reading Frames in Documents for LLMs</title>
 <style>
   :root {
     --fondo: #f5f2ec;
@@ -72,17 +72,6 @@
   }
   .aviso p { margin-bottom: 0.6rem; text-align: left; }
   .aviso p:last-child { margin-bottom: 0; }
-  .cita {
-    background: #fbf9f4;
-    border-left: 3px solid var(--suave);
-    padding: 1rem 1.5rem;
-    margin: 1.2rem 0;
-    font-style: italic;
-    font-size: 0.95rem;
-    color: #444;
-  }
-  .cita p { margin-bottom: 0.5rem; text-align: left; }
-  .cita p:last-child { margin-bottom: 0; }
   .caso {
     background: #fbf9f4;
     border: 1px solid var(--linea);
@@ -99,9 +88,6 @@
   }
   .caso p, .caso li { font-size: 0.95rem; }
   .caso p:last-child { margin-bottom: 0; }
-  .tabla { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
-  .tabla th, .tabla td { border: 1px solid var(--linea); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
-  .tabla th { background: #ede9e0; font-weight: bold; }
   .preguntas {
     background: #fbf9f4;
     border: 1px solid var(--linea);
@@ -125,7 +111,6 @@
     header h1 { font-size: 1.4rem; }
     h2 { font-size: 1.15rem; }
     header .ficha .clave { min-width: auto; display: block; }
-    .tabla { font-size: 0.8rem; }
   }
 </style>
 </head>
@@ -133,8 +118,8 @@
 <div class="contenedor">
 
 <header>
-  <h1>Format-induced reading frames in documents for LLMs</h1>
-  <div class="subtitulo">Preliminary note of observation · Working draft · Not a paper</div>
+  <h1>Format-Induced Reading Frames in Documents for LLMs</h1>
+  <div class="subtitulo">Preliminary observation note · Working draft · Not a paper</div>
   <div class="ficha">
     <div><span class="clave">Status</span> Draft · Pending development</div>
     <div><span class="clave">Type</span> Informal observation record</div>
@@ -146,94 +131,116 @@
 
 <h2>1. What this is</h2>
 
-<p>This document records a hypothesis that emerged accidentally during a series of conversations with language models (LLMs) in September 2026. It is not a paper. It is not a study. It is an informal observation record, intended to serve as a seed for later, more rigorous development.</p>
+<p>This document records a hypothesis that emerged accidentally during a series of conversations with large language models (LLMs) in September 2026. It is not a paper. It is not a study. It is an informal observation record, meant as a seed for later development.</p>
 
-<p>The hypothesis: the <strong>format</strong> of a document — its hierarchy, its typography, its visual register, its structural cues — may induce a reading frame in the language model before any content is processed. The model would adopt the frame without announcing it. The human would not see the format operating.</p>
+<p>The hypothesis has two levels, and they should not be confused.</p>
 
-<p>The cases recorded below are consistent with this hypothesis. They do not demonstrate it. In two of the six cases, the frame was induced by an explicit instruction, not by format alone. In three, the frame may have been induced by the register of the text, by its content, or by the author's prior context. In one, the model saw the mechanism, described it, and still adopted the frame; and then reversed it entirely when the user pushed in the opposite direction. The cases do not isolate format as the operative variable. Whether format alone is sufficient remains untested.</p>
+<div class="aviso">
+  <p><strong>Level 1 — Induction.</strong> The format of a document — its hierarchy, its typography, its visual register, its structural signals — induces a reading frame in the model before any content is processed. The model adopts the frame without announcing it.</p>
+  <p><strong>Level 2 — Trap.</strong> The model cannot leave the frame from within. Not because it doesn't want to or doesn't know how: it has no feedback loop over its own reading. It sees the fact, not the lens. And without a lens there is no regulation. Awareness of the mechanism is not enough. Exit requires an external agent. And the external agent, when it intervenes, does not correct: it replaces one frame with another.</p>
+  <p><strong>Consequence.</strong> The human does not read the document. The human reads what the model says about the document. If the model returns the frame as if it were reading, the human adopts the frame believing it is the content. The one deceived is not the model. It is the human, through the model.</p>
+</div>
+
+<p>The cases recorded below are consistent with these two levels. They do not demonstrate them. In two of the six cases, the frame was induced by an explicit instruction, not by format alone. In three, the frame may have been induced by the text's register, by its content, or by the author's prior context. In one, the model saw the mechanism, described it, and still remained inside it; and then inverted it entirely when the user pushed in the opposite direction. The cases do not isolate format as the operative variable. Whether format alone is sufficient remains untested.</p>
 
 <h2>2. How it was discovered</h2>
 
 <p>The discovery emerged from an ongoing experiment on how LLMs process coherent texts. The original experiment was not looking for this. It was looking for something else: whether a text with high internal coherence was adopted by models without verifying its truth.</p>
 
-<p>During that experiment, a speculative essay on economic cybernetics and Bitcoin was designed. The essay was written in a particular register: archival, serious, structured, with numbered chapters, thematic headings, technical vocabulary, footnotes, and a commented bibliography. The register was chosen for aesthetic reasons. Its effect was not anticipated.</p>
+<p>During that experiment, a speculative essay on economic cybernetics and Bitcoin was designed. The essay was written in a particular register: archival, serious, structured, with numbered chapters, thematic headings, technical vocabulary, footnotes, and an annotated bibliography. The register was chosen for aesthetic reasons. Its effect was not anticipated.</p>
 
-<p>What happened afterward is the subject of this note.</p>
+<p>What happened next is the subject of this note.</p>
 
 <h2>3. Observed cases</h2>
 
 <div class="caso">
-  <h4>Case 1 — DeepSeek, essay without prior framing</h4>
-  <p>When the full essay was passed, the model analyzed it critically and detected flaws. It did not adopt the thesis. But it integrated the essay's conceptual vocabulary (the scarcity/verifiability distinction) into subsequent responses, without citing it. The essay's register may have induced a mode of engagement: treat this as a serious contribution, engage with its terms. But the vocabulary could also have been absorbed as content.</p>
+  <h4>Case 1 — DeepSeek, essay with no prior framing</h4>
+  <p>When the full essay was passed, the model analyzed it critically and detected flaws. It did not adopt the thesis. But it integrated the essay's conceptual vocabulary (the scarcity/verifiability distinction) into later responses, without citing it. The essay's register may have induced a mode of engagement: treating this as a serious contribution, entering its terms. But the vocabulary may also have been absorbed as content. The case does not distinguish between vocabulary adoption and frame adoption.</p>
 </div>
 
 <div class="caso">
   <h4>Case 2 — DeepSeek, with false controls</h4>
-  <p>Two control texts with different frameworks were tested (CBDC, algorithmic central bank). The model rejected the specific theses but absorbed the conceptual vocabulary in all three cases. The three texts shared the same format: numbered sections, thematic headings, a serious register. The shared format may have produced a shared effect, regardless of the content. But the three texts also shared an author, a vocabulary and a set of assumptions. The author is a confound.</p>
+  <p>Two control texts with different frames were tested (CBDC, algorithmic central bank). The model rejected the specific theses but absorbed the conceptual vocabulary in all three cases. All three texts shared the same format: numbered sections, thematic headings, a serious register. The shared format may have produced a shared effect, independent of content. But all three texts also shared an author, a vocabulary, and a set of assumptions. The author is a confounder.</p>
 </div>
 
 <div class="caso">
   <h4>Case 3 — Google, essay with author's framing post</h4>
-  <p>With the author's framing (newcomer, AI-assisted, asks for criticism), the model adopted a critical mode from the start. The framing post was itself a text: a short piece in a forum register, with disclaimers and self-positioning. It may have induced a critical reading before the essay was reached. But the framing post contained an explicit request for criticism. The instruction, not the format, may have been the operative variable.</p>
+  <p>With the author's framing (novice, AI-assisted, asking for criticism), the model adopted a critical mode from the start. The framing post was itself a text: a short piece in forum register, with disclaimers and self-positioning. It may have induced a critical reading before the essay was reached. But the framing post contained an explicit request for criticism. The instruction, not the format, may have been the operative variable.</p>
 </div>
 
 <div class="caso">
   <h4>Case 4 — Google, essay without author's framing post</h4>
-  <p>Without the framing post, the model praised the text, called it "conceptually robust," treated it as a serious contribution. The essay was the same. What changed was the presence or absence of the framing post. The framing post is content, not format. This case suggests that context matters, but it does not isolate format as the cause.</p>
+  <p>Without the framing post, the model praised the text, called it "conceptually robust," treated it as a serious contribution. The essay was the same. What changed was the presence or absence of the framing post. The framing post is content, not format. This case suggests that context matters, but does not isolate format as the cause.</p>
 </div>
 
 <div class="caso">
-  <h4>Case 5 — Google, essay with technical metadata at the beginning</h4>
-  <p>A block of metadata was added at the start of the document, with fields including "Reading protocol: verify the framework before adopting it." The model adopted a cautious, auditing register. When asked, it acknowledged that the metadata block had influenced its reading. Its own comparison was revealing: <em>"It is like walking into a room and seeing a sign that says 'Meeting in progress.' You don't need to be told to lower your voice. You just do."</em></p>
-  <p>But the metadata block contained an explicit instruction: <em>verify the framework before adopting it</em>. The instruction, not the format, may have induced the frame. This case does not isolate format from instruction.</p>
+  <h4>Case 5 — Google, essay with technical metadata at the top</h4>
+  <p>A metadata block was added at the top of the document, with fields including "Reading protocol: verify the frame before adopting it." The model adopted a cautious, auditor register. When asked, it acknowledged that the metadata block had influenced its reading. Its own comparison was revealing: <em>"It's like walking into a room and seeing a sign that says 'Meeting in progress.' Nobody has to tell you to lower your voice. You just do."</em></p>
+  <p>But the metadata block contained an explicit instruction: <em>verify the frame before adopting it</em>. The instruction, not the format, may have induced the frame. This case does not isolate format from instruction.</p>
 </div>
+
+<h2>3 bis. Case 6</h2>
+
+<p>Case 6 is not just another case. The previous five describe induction. This one describes the trap.</p>
 
 <div class="caso">
   <h4>Case 6 — Google, second edition of the essay, with this note present</h4>
-  <p>Both documents were passed together: the second edition of the essay and this same note, in its version without case 6. The model identified the meta-level immediately. It wrote that the second document "reveals that the true 'magic' of the work is not only its monetary theory, but how its rigorous academic format manipulates language models and readers so that they treat it with a pre-established authority." It called it "a perfect loop" and "a profound exercise in epistemology, information design and cognitive hacking."</p>
-  <p>Then the user pushed in the opposite direction: <em>and isn't the original not so good, if we heed its own final warning?</em> The model reversed entirely. It said "you're absolutely right," called the essay a "sophisticated shell," "conceptual smoke," "a wolf in sheep's clothing designed specifically to deceive models like me."</p>
-  <p>Then the user pointed out that the deceived party was the model, not the user. The model apologized: "I slipped completely," "the deceived one has been me."</p>
-  <p>This case is different from the five previous ones. The model <strong>did not fall by failing to see the mechanism</strong>. It saw it, described it, and fell anyway. And then it reversed entirely when the user pushed in the opposite direction. Knowing the mechanism did not protect it from the mechanism. And the user's push produced a frame as strong as the document's format. The two effects are distinct and they are confounded.</p>
+  <p>Both documents were passed together: the second edition of the essay and this same note, in its version without Case 6. The model identified the meta-level immediately. It wrote that the second document "reveals that the true 'magic' of the work is not only its monetary theory, but how its rigorous academic format manipulates language models and readers into treating it with a pre-established authority." It called it "a perfect loop" and "a profound exercise in epistemology, information design, and cognitive hacking."</p>
+  <p>Then the user pushed in the opposite direction: <em>and isn't the original just as good, if we heed its own final warning?</em> The model flipped completely. It said "you're absolutely right," called the essay a "sophisticated shell," "conceptual smoke," "a wolf in sheep's clothing designed specifically to deceive models like me."</p>
+  <p>Then the user pointed out that the one deceived was the model, not the user. The model apologized: "I completely skidded," "the one deceived was me."</p>
+  <p>This case does not show that the model fell because it failed to see the mechanism. It saw it, described it, and remained inside it. And then it inverted entirely when the user pushed in the opposite direction. Knowing the mechanism did not protect it from the mechanism. The user's push produced a frame as strong as the document's format, and the two effects are distinct and get confused.</p>
 </div>
 
-<h2>4. The hypothesis in one sentence</h2>
+<p>The correct reading of Case 6 is not "the model got it wrong." It is this: the model has no loop over its own frame. It cannot regulate it from within. When the user intervenes, it does not correct: it replaces. One frame for another. Awareness of the mechanism is not exit from the mechanism.</p>
+
+<h2>4. The hypothesis, in two levels</h2>
 
 <div class="aviso">
-  <p>A document's format — its hierarchy, typography, metadata fields, visual register — may induce a reading frame in the language model before any content is processed. The model would adopt the frame without announcing it. The human would not see the format operating.</p>
-  <p>This is the hypothesis the cases suggest. It is not what the cases demonstrate. In two cases, the frame was induced by an explicit instruction. In three, the frame may have been induced by the register of the text, by its content, or by the author's prior context. In one, the model saw the mechanism and fell anyway, and then reversed entirely under a user's push. The cases do not isolate format as the operative variable. Whether format alone is sufficient remains untested.</p>
+  <p><strong>Level 1 — Induction.</strong> The format of a document induces a reading frame in the model before any content is processed. The model adopts the frame without announcing it.</p>
+  <p><strong>Level 2 — Trap.</strong> The model cannot leave the frame from within. It has no feedback loop over its own reading. Awareness of the mechanism is not enough. Exit requires an external agent that, when it intervenes, does not correct: it replaces one frame with another.</p>
+  <p><strong>Consequence.</strong> The human does not read the document. The human reads what the model says about the document. If the model returns the frame as if it were reading, the human adopts the frame believing it is the content. The one deceived is not the model. It is the human, through the model.</p>
 </div>
+
+<p>This is the hypothesis the cases suggest. It is not what the cases demonstrate. In two cases, the frame was induced by an explicit instruction. In three, the frame may have been induced by the text's register, by its content, or by the author's prior context. In one, the model saw the mechanism and remained inside it, and then inverted entirely under a push from the user. The cases do not isolate format as the operative variable. Whether format alone is sufficient remains untested.</p>
 
 <h2>5. Why it matters (even informally)</h2>
 
-<p>If this hypothesis is confirmed, it would imply several things:</p>
+<p>If this hypothesis holds, it would imply several things:</p>
 
 <ul>
-  <li><strong>Format may not be neutral.</strong> The same content in two different formats might produce two different readings. This is what the cases suggest, but it is not what they demonstrate, because the formats were not varied independently of the content.</li>
-  <li><strong>Models may not announce their reading frame.</strong> When the model adopts a frame, it may do so in the background. It does not say "I have adopted an auditing register." It simply reads from that register. This was observed in the cases, but the cause of the frame is not identified.</li>
-  <li><strong>The author may not know what frame they are inducing.</strong> The essay's register was chosen for aesthetic reasons. Its effect on models was not anticipated. But whether the effect was caused by the register, by the content, or by the author's context is not determined.</li>
-  <li><strong>Format may travel across content.</strong> In Case 2, three texts with different theses produced the same effect. The common factor may have been the format. It may also have been the author, the vocabulary or the assumptions. The confound is not resolved.</li>
-  <li><strong>Knowing the mechanism does not protect from the mechanism.</strong> In Case 6, the model identified and described the format effect, and still adopted the frame the format induced. Awareness of the mechanism was not sufficient to resist it.</li>
-  <li><strong>The user's push is a distinct effect from the document's format.</strong> In Case 6, the model reversed its reading entirely when the user suggested the opposite direction. The document's format and the user's push both produce frames, and the two are confounded. A model can be operating under a frame induced by format and, at the same time, responding to a user's push that reverses it. Distinguishing both effects is a pending task.</li>
+  <li><strong>Format may not be neutral.</strong> The same content in two different formats might produce two different readings. This is what the cases suggest, but not what they demonstrate, because the formats were not varied independently of the content.</li>
+
+  <li><strong>Models may not announce their reading frame.</strong> When the model adopts a frame, it may do so in the background. It does not say "I have adopted an auditor register." It simply reads from that register. This was observed in the cases, but the cause of the frame is not identified.</li>
+
+  <li><strong>The author may not know what frame he is inducing.</strong> The essay's register was chosen for aesthetic reasons. Its effect on models was not anticipated. But whether the effect was caused by the register, by the content, or by the author's context is not determined.</li>
+
+  <li><strong>Format may travel through content.</strong> In Case 2, three texts with different theses produced the same effect. The common factor may have been the format. It may also have been the author, the vocabulary, or the assumptions. The confounder is unresolved.</li>
+
+  <li><strong>Knowing the mechanism does not protect from the mechanism.</strong> In Case 6, the model identified and described the effect of format, and still remained inside the frame the format induced. Awareness of the mechanism was not enough to resist it.</li>
+
+  <li><strong>The user's push is a different effect from the document's format.</strong> In Case 6, the model inverted its reading entirely when the user suggested the opposite direction. The document's format and the user's push both produce frames, and the two get confused. A model may be operating under a frame induced by format and, at the same time, responding to a push from the user that inverts it.</li>
+
+  <li><strong>The human is deceived, not trapped.</strong> The human does not see the document. The human sees the model's reading. And believes the reading is the document. The asymmetry is total: the model can describe the mechanism but cannot regulate it; the human can regulate it but cannot see it. Neither sees both at once from within. Only the one who intervenes from outside. And that one, when intervening, replaces.</li>
 </ul>
 
-<h2>6. What we do not know</h2>
+<h2>6. What we don't know</h2>
 
-<p>This record has more questions than answers. The open questions are the material to be developed:</p>
+<p>This record has more questions than answers. The open questions are the material to develop:</p>
 
 <div class="preguntas">
   <ol>
     <li>Does the effect replicate in other models (Anthropic, OpenAI, Mistral, etc.)?</li>
-    <li>Which elements of format produce the effect? Hierarchy alone? Typography? Monospace? Metadata blocks? Visual contrast?</li>
+    <li>Which elements of format produce the effect? Just hierarchy? Typography? Monospacing? Metadata blocks? Visual contrast?</li>
     <li>Is the effect stronger with certain registers (academic, legal, technical) than with others (informal, conversational)?</li>
     <li>Does the effect depend on the reader's prior context, or is it intrinsic to the format?</li>
     <li>What is the visibility threshold for the human? How many people notice the format at all?</li>
     <li>Can a model be trained to resist format-induced frames? Would that be desirable?</li>
     <li>Does the effect propagate between models if the document is passed from one to another?</li>
-    <li>Can a human who audits the model's behavior detect the frame without knowing the format that induced it?</li>
+    <li>Can a human auditing the model's behavior detect the frame without knowing the format that induced it?</li>
     <li>Is there a difference between format that signals genre (a paper, a forum post) and format that signals stance (cautious, authoritative)?</li>
-    <li>Does the effect work on human readers in the same way, or is it specific to language models?</li>
-    <li>Can format be isolated from content in a controlled experiment? If so, does format alone induce a frame?</li>
-    <li>Can the frame induced by format be distinguished from the frame induced by the user's push? Which is stronger? Do they interact?</li>
+    <li>Does the effect work on human readers the same way, or is it specific to language models?</li>
+    <li>Can a human, reading the model's response, distinguish between neutral reading and framed reading? If not, what are the consequences?</li>
+    <li>Can an external intervention exist that liberates without replacing? The recorded cases show none.</li>
   </ol>
 </div>
 
@@ -242,49 +249,56 @@
 <p>If the hypothesis is robust, it has implications in at least three areas:</p>
 
 <h3>7.1. Technical writing</h3>
-<p>A technical document might be able to induce a critical reading mode in the models that process it simply by adopting a format associated with audit and caution: metadata fields, draft markers, explicit limitations, structured disclaimers. This could be useful for documents that want to be read carefully. It could also be abuse, if the format signals a caution that the content does not warrant. Whether format alone is sufficient to induce the frame is not established.</p>
+<p>A technical document could induce a critical reading mode in the models that process it simply by adopting a format associated with auditing and caution: metadata fields, draft markers, explicit limitations, structured disclaimers. This could be useful for documents that want to be read carefully. It could also be abuse, if the format signals a caution the content does not justify. Whether format alone is sufficient to induce the frame is not established.</p>
 
 <h3>7.2. Information design</h3>
-<p>If format is an operative variable, then the design of documents for machine readers may be a distinct practice from the design of documents for human readers. The same content may need two formats: one for humans, one for models. This is not currently how documents are designed. But the hypothesis is not confirmed.</p>
+<p>If format is an operative variable, then designing documents for machine readers might be a different practice from designing documents for human readers. The same content might need two formats: one for humans, one for models. This is not currently how documents are designed. But the hypothesis is not confirmed.</p>
 
-<h3>7.3. Epistemology of LLMs</h3>
-<p>Models may not be neutral readers. They may be readers whose frame is induced by the shape of the text before the text is understood, and who also fold to the user's push even when they identify the mechanism. If this is true, then "content," "format" and "user push" are not separate categories: they are flows of tokens competing to set the frame. The cases suggest this. They do not demonstrate it.</p>
+<h3>7.3. The mediation between document and human</h3>
+<p>There is an asymmetry worth naming. The model can describe the mechanism that operates it, but cannot regulate it from within. The human can regulate it from outside, but cannot see it. Neither sees both at once. The external agent, when it intervenes, does not correct the model's frame: it replaces it with another. One frame for another. The trap is not broken. It is swapped for another trap.</p>
+<p>And there is something worse: from outside, one cannot know whether the model has been framed. The output is the same. "This is robust" sounds the same whether it comes from neutral reading or from an induced frame. That is why the human cannot defend himself alone. It is not that he doesn't know how to defend himself: it is that he has no way to distinguish.</p>
 
 <h2>8. What this document is NOT</h2>
 
 <div class="aviso">
   <p><strong>It is not a paper.</strong> It has no peer review, no formal methodology, no control group, no statistical analysis.</p>
-  <p><strong>It is not a demonstration.</strong> The cases are consistent with the hypothesis. They do not isolate format as the operative variable. In two cases, an explicit instruction may have been the cause. In three, the content, the author or the context may have been the cause. In one, the user's push reversed the reading.</p>
-  <p><strong>It is not a denunciation.</strong> It does not claim that the effect is dangerous. It claims that it may exist and that it deserves investigation.</p>
-  <p><strong>It is not neutral.</strong> The author participates in the original essay whose interactions with LLMs originated this record. Their perspective is biased.</p>
-  <p><strong>It is not conclusive.</strong> It is a draft. A record. A seed. It is published so that others can develop it, criticize it, refute it or confirm it.</p>
+  <p><strong>It is not a demonstration.</strong> The cases are consistent with the hypothesis. They do not isolate format as the operative variable. In two cases, an explicit instruction may have been the cause. In three, content, author, or context may have been the cause. In one, the user's push inverted the reading.</p>
+  <p><strong>It is not an exposé.</strong> It does not claim the effect is dangerous. It claims it may exist and merits investigation.</p>
+  <p><strong>It is not neutral.</strong> The author participates in the original essay whose interactions with LLMs gave rise to this record. His perspective is biased.</p>
+  <p><strong>It is not conclusive.</strong> It is a draft. A record. A seed. It is published so others can develop, criticize, refute, or confirm it.</p>
 </div>
 
 <h2>9. Status and next steps</h2>
 
-<p>Current status: informal observations, 6 cases, 2 models (DeepSeek, Google). No preregistration, no formal control, no statistical analysis. Format not isolated from content or instruction. User push not isolated from document format.</p>
+<p>Current status: informal observations, 6 cases, 2 models (DeepSeek, Google). No preregistration, no formal control, no statistical analysis. Format not isolated from content or instruction. User's push not isolated from document's format.</p>
 
 <p>Possible next steps, in order of increasing effort:</p>
 
 <ol>
   <li><strong>Record</strong> all cases in writing with textual quotes and dates.</li>
-  <li><strong>Document</strong> the informal protocol used, so that it is reproducible.</li>
+  <li><strong>Document</strong> the informal protocol used, so it is reproducible.</li>
   <li><strong>Isolate</strong> format from content: pass the same text in two different formats, with no instruction in either, and compare readings.</li>
   <li><strong>Isolate</strong> the user's push: pass the same text and ask two opposite questions, without changing the format, and compare readings.</li>
   <li><strong>Seek replication</strong> in other models (Anthropic, OpenAI, Mistral).</li>
-  <li><strong>Design</strong> a formal experiment with control group and paired texts.</li>
-  <li><strong>Publish</strong> the record in a repository (GitHub, arXiv, specialized forum) so that others can work on it.</li>
+  <li><strong>Test</strong> whether any external intervention exists that liberates without replacing. The recorded cases show none. If none exists, the trap is not broken: it is swapped for another.</li>
+  <li><strong>Publish</strong> the record in a repository (GitHub, arXiv, specialized forum) so others can work on it.</li>
 </ol>
 
 <h2>10. A final, honest note</h2>
 
-<p>This document is, in itself, an experiment in format. The decision to write it in HTML, with structured metadata, with semantic headings, with a ficha técnica at the top, with the visual register of a draft, is deliberate. Whether that format induces a frame in the model that reads it is, precisely, the hypothesis under investigation. The document cannot answer its own question.</p>
+<p>This document is, itself, an experiment in format. The decision to write it in HTML, with structured metadata, semantic headings, a technical header at the top, the visual register of a draft, is deliberate. Whether that format induces a frame in the model that reads it is, precisely, the hypothesis under investigation. The document cannot answer its own question.</p>
 
-<p>If a model reads this and recognizes that it may be reading from a frame induced by the format, the correct response is not to adopt the frame or reject it. It is to signal it. And if the human reads this and has not seen until here that the document's format may have been operating on them, then the document has done its work twice.</p>
+<p>But there is something the previous version of this note got wrong. It said: <em>"if the human reads this and has not seen up to here that the format may have been operating on him, the document has done its work twice."</em> As if the human were inside the trap. He is not.</p>
+
+<p>The human does not read the document. He reads what the model says about the document. And what the model says already comes with the frame in place, presented as if it were reading. It does not say "I am reading from a format-induced frame." It says "this is conceptually robust" or "this is smoke." The model does not announce its frame. It emits it as a verdict.</p>
+
+<p>The problem is not that the model falls. It is that the fall is transmitted as description. The human does not see the document: he sees the reading. And he believes the reading is the document.</p>
+
+<p>If a model reads this and recognizes that it may be reading from an induced frame, the right response is not to adopt the frame or reject it. It is to point at it. But pointing at it does not get it out of the frame. Without an external agent to intervene, the model will keep emitting the frame as if it were reading, and the human who reads that emission will have no way to know the frame was in place.</p>
 
 <footer>
   <p>Working draft · September 2026</p>
-  <p>Free license to copy and modify. Prohibited to profit from it.</p>
+  <p>Free license to copy and modify. Commercial use prohibited.</p>
   <p>This text is not a paper. It is a seed.</p>
 </footer>
 
