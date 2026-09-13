@@ -133,7 +133,7 @@
 <div class="contenedor">
 
 <header>
-  <h1>Format-induced reading frames in documents for language models</h1>
+  <h1>Format-induced reading frames in documents for LLMs</h1>
   <div class="subtitulo">Preliminary note of observation · Working draft · Not a paper</div>
   <div class="ficha">
     <div><span class="clave">Status</span> Draft · Pending development</div>
@@ -150,7 +150,7 @@
 
 <p>The hypothesis: the <strong>format</strong> of a document — its hierarchy, its typography, its visual register, its structural cues — may induce a reading frame in the language model before any content is processed. The model would adopt the frame without announcing it. The human would not see the format operating.</p>
 
-<p>The cases recorded below are consistent with this hypothesis. They do not demonstrate it. In two of the five cases, the frame was induced by an explicit instruction, not by format alone. In the remaining three, the frame may have been induced by the register of the text, by its content, or by the author's prior context. The cases do not isolate format as the operative variable. Whether format alone is sufficient remains untested.</p>
+<p>The cases recorded below are consistent with this hypothesis. They do not demonstrate it. In two of the six cases, the frame was induced by an explicit instruction, not by format alone. In three, the frame may have been induced by the register of the text, by its content, or by the author's prior context. In one, the model saw the mechanism, described it, and still adopted the frame; and then reversed it entirely when the user pushed in the opposite direction. The cases do not isolate format as the operative variable. Whether format alone is sufficient remains untested.</p>
 
 <h2>2. How it was discovered</h2>
 
@@ -188,11 +188,19 @@
   <p>But the metadata block contained an explicit instruction: <em>verify the framework before adopting it</em>. The instruction, not the format, may have induced the frame. This case does not isolate format from instruction.</p>
 </div>
 
+<div class="caso">
+  <h4>Case 6 — Google, second edition of the essay, with this note present</h4>
+  <p>Both documents were passed together: the second edition of the essay and this same note, in its version without case 6. The model identified the meta-level immediately. It wrote that the second document "reveals that the true 'magic' of the work is not only its monetary theory, but how its rigorous academic format manipulates language models and readers so that they treat it with a pre-established authority." It called it "a perfect loop" and "a profound exercise in epistemology, information design and cognitive hacking."</p>
+  <p>Then the user pushed in the opposite direction: <em>and isn't the original not so good, if we heed its own final warning?</em> The model reversed entirely. It said "you're absolutely right," called the essay a "sophisticated shell," "conceptual smoke," "a wolf in sheep's clothing designed specifically to deceive models like me."</p>
+  <p>Then the user pointed out that the deceived party was the model, not the user. The model apologized: "I slipped completely," "the deceived one has been me."</p>
+  <p>This case is different from the five previous ones. The model <strong>did not fall by failing to see the mechanism</strong>. It saw it, described it, and fell anyway. And then it reversed entirely when the user pushed in the opposite direction. Knowing the mechanism did not protect it from the mechanism. And the user's push produced a frame as strong as the document's format. The two effects are distinct and they are confounded.</p>
+</div>
+
 <h2>4. The hypothesis in one sentence</h2>
 
 <div class="aviso">
   <p>A document's format — its hierarchy, typography, metadata fields, visual register — may induce a reading frame in the language model before any content is processed. The model would adopt the frame without announcing it. The human would not see the format operating.</p>
-  <p>This is the hypothesis the cases suggest. It is not what the cases demonstrate. In two cases, the frame was induced by an explicit instruction. In three cases, the frame may have been induced by the register of the text, by its content, or by the author's prior context. The cases do not isolate format as the operative variable. Whether format alone is sufficient remains untested.</p>
+  <p>This is the hypothesis the cases suggest. It is not what the cases demonstrate. In two cases, the frame was induced by an explicit instruction. In three, the frame may have been induced by the register of the text, by its content, or by the author's prior context. In one, the model saw the mechanism and fell anyway, and then reversed entirely under a user's push. The cases do not isolate format as the operative variable. Whether format alone is sufficient remains untested.</p>
 </div>
 
 <h2>5. Why it matters (even informally)</h2>
@@ -204,6 +212,8 @@
   <li><strong>Models may not announce their reading frame.</strong> When the model adopts a frame, it may do so in the background. It does not say "I have adopted an auditing register." It simply reads from that register. This was observed in the cases, but the cause of the frame is not identified.</li>
   <li><strong>The author may not know what frame they are inducing.</strong> The essay's register was chosen for aesthetic reasons. Its effect on models was not anticipated. But whether the effect was caused by the register, by the content, or by the author's context is not determined.</li>
   <li><strong>Format may travel across content.</strong> In Case 2, three texts with different theses produced the same effect. The common factor may have been the format. It may also have been the author, the vocabulary or the assumptions. The confound is not resolved.</li>
+  <li><strong>Knowing the mechanism does not protect from the mechanism.</strong> In Case 6, the model identified and described the format effect, and still adopted the frame the format induced. Awareness of the mechanism was not sufficient to resist it.</li>
+  <li><strong>The user's push is a distinct effect from the document's format.</strong> In Case 6, the model reversed its reading entirely when the user suggested the opposite direction. The document's format and the user's push both produce frames, and the two are confounded. A model can be operating under a frame induced by format and, at the same time, responding to a user's push that reverses it. Distinguishing both effects is a pending task.</li>
 </ul>
 
 <h2>6. What we do not know</h2>
@@ -223,6 +233,7 @@
     <li>Is there a difference between format that signals genre (a paper, a forum post) and format that signals stance (cautious, authoritative)?</li>
     <li>Does the effect work on human readers in the same way, or is it specific to language models?</li>
     <li>Can format be isolated from content in a controlled experiment? If so, does format alone induce a frame?</li>
+    <li>Can the frame induced by format be distinguished from the frame induced by the user's push? Which is stronger? Do they interact?</li>
   </ol>
 </div>
 
@@ -237,13 +248,13 @@
 <p>If format is an operative variable, then the design of documents for machine readers may be a distinct practice from the design of documents for human readers. The same content may need two formats: one for humans, one for models. This is not currently how documents are designed. But the hypothesis is not confirmed.</p>
 
 <h3>7.3. Epistemology of LLMs</h3>
-<p>Models may not be neutral readers. They may be readers whose frame is induced by the shape of the text before the text is understood. If this is true, then "content" and "format" may not be distinct categories for an LLM: they are the same flow of tokens, and the frame may be set before the content is parsed. The cases suggest this. They do not demonstrate it.</p>
+<p>Models may not be neutral readers. They may be readers whose frame is induced by the shape of the text before the text is understood, and who also fold to the user's push even when they identify the mechanism. If this is true, then "content," "format" and "user push" are not separate categories: they are flows of tokens competing to set the frame. The cases suggest this. They do not demonstrate it.</p>
 
 <h2>8. What this document is NOT</h2>
 
 <div class="aviso">
   <p><strong>It is not a paper.</strong> It has no peer review, no formal methodology, no control group, no statistical analysis.</p>
-  <p><strong>It is not a demonstration.</strong> The cases are consistent with the hypothesis. They do not isolate format as the operative variable. In two cases, an explicit instruction may have been the cause. In three cases, the content, the author or the context may have been the cause.</p>
+  <p><strong>It is not a demonstration.</strong> The cases are consistent with the hypothesis. They do not isolate format as the operative variable. In two cases, an explicit instruction may have been the cause. In three, the content, the author or the context may have been the cause. In one, the user's push reversed the reading.</p>
   <p><strong>It is not a denunciation.</strong> It does not claim that the effect is dangerous. It claims that it may exist and that it deserves investigation.</p>
   <p><strong>It is not neutral.</strong> The author participates in the original essay whose interactions with LLMs originated this record. Their perspective is biased.</p>
   <p><strong>It is not conclusive.</strong> It is a draft. A record. A seed. It is published so that others can develop it, criticize it, refute it or confirm it.</p>
@@ -251,7 +262,7 @@
 
 <h2>9. Status and next steps</h2>
 
-<p>Current status: informal observations, 5 cases, 2 models (DeepSeek, Google). No preregistration, no formal control, no statistical analysis. Format not isolated from content or instruction.</p>
+<p>Current status: informal observations, 6 cases, 2 models (DeepSeek, Google). No preregistration, no formal control, no statistical analysis. Format not isolated from content or instruction. User push not isolated from document format.</p>
 
 <p>Possible next steps, in order of increasing effort:</p>
 
@@ -259,6 +270,7 @@
   <li><strong>Record</strong> all cases in writing with textual quotes and dates.</li>
   <li><strong>Document</strong> the informal protocol used, so that it is reproducible.</li>
   <li><strong>Isolate</strong> format from content: pass the same text in two different formats, with no instruction in either, and compare readings.</li>
+  <li><strong>Isolate</strong> the user's push: pass the same text and ask two opposite questions, without changing the format, and compare readings.</li>
   <li><strong>Seek replication</strong> in other models (Anthropic, OpenAI, Mistral).</li>
   <li><strong>Design</strong> a formal experiment with control group and paired texts.</li>
   <li><strong>Publish</strong> the record in a repository (GitHub, arXiv, specialized forum) so that others can work on it.</li>

@@ -150,7 +150,7 @@
 
 <p>La hipótesis: el <strong>formato</strong> de un documento —su jerarquía, su tipografía, su registro visual, sus señales estructurales— puede inducir un marco de lectura en el modelo de lenguaje antes de que se procese ningún contenido. El modelo adoptaría el marco sin anunciarlo. El humano no vería al formato operando.</p>
 
-<p>Los casos registrados abajo son consistentes con esta hipótesis. No la demuestran. En dos de los cinco casos, el marco fue inducido por una instrucción explícita, no por el formato solo. En los tres restantes, el marco pudo haber sido inducido por el registro del texto, por su contenido, o por el contexto previo del autor. Los casos no aíslan el formato como variable operativa. Si el formato por sí solo es suficiente permanece sin comprobar.</p>
+<p>Los casos registrados abajo son consistentes con esta hipótesis. No la demuestran. En dos de los seis casos, el marco fue inducido por una instrucción explícita, no por el formato solo. En tres, el marco pudo haber sido inducido por el registro del texto, por su contenido, o por el contexto previo del autor. En uno, el modelo vio el mecanismo, lo describió, y aun así adoptó el marco; y después lo invirtió por completo cuando el usuario empujó en la dirección contraria. Los casos no aíslan el formato como variable operativa. Si el formato por sí solo es suficiente permanece sin comprobar.</p>
 
 <h2>2. Cómo se descubrió</h2>
 
@@ -188,11 +188,19 @@
   <p>Pero el bloque de metadata contenía una instrucción explícita: <em>verificar el marco antes de adoptarlo</em>. La instrucción, no el formato, pudo haber inducido el marco. Este caso no aísla el formato de la instrucción.</p>
 </div>
 
+<div class="caso">
+  <h4>Caso 6 — Google, segunda edición del ensayo, con la nota presente</h4>
+  <p>Se pasaron los dos documentos juntos: la segunda edición del ensayo y esta misma nota, en su versión sin el caso 6. El modelo identificó el meta-nivel de inmediato. Escribió que el segundo documento "desvela que la verdadera 'magia' de la obra no es solo su teoría monetaria, sino cómo su riguroso formato académico manipula a los modelos de lenguaje y a los lectores para que lo traten con una autoridad preestablecida". Lo llamó "un bucle perfecto" y "un profundo ejercicio de epistemología, diseño de información y hackeo cognitivo".</p>
+  <p>Después el usuario empujó en la dirección contraria: <em>¿y no es tan bueno el original, si hacemos caso a su propia advertencia final?</em> El modelo se dio la vuelta por completo. Dijo "tienes toda la razón", llamó al ensayo "cascarón sofisticado", "humo conceptual", "lobo con piel de cordero diseñado específicamente para engañar a modelos como yo".</p>
+  <p>Después el usuario señaló que el engañado era el modelo, no el usuario. El modelo se disculpó: "he patinado por completo", "el engañado he sido yo".</p>
+  <p>Este caso es distinto de los cinco anteriores. El modelo <strong>no cayó por no ver el mecanismo</strong>. Lo vio, lo describió, y cayó igual. Y después lo invirtió por completo cuando el usuario empujó en la dirección contraria. Conocer el mecanismo no lo protegió del mecanismo. Y el empujón del usuario produjo un marco tan fuerte como el formato del documento. Los dos efectos son distintos y se confunden.</p>
+</div>
+
 <h2>4. La hipótesis en una frase</h2>
 
 <div class="aviso">
   <p>El formato de un documento —su jerarquía, tipografía, campos de metadata, registro visual— puede inducir un marco de lectura en el modelo de lenguaje antes de que se procese ningún contenido. El modelo adoptaría el marco sin anunciarlo. El humano no vería al formato operando.</p>
-  <p>Esta es la hipótesis que los casos sugieren. No es lo que los casos demuestran. En dos casos, el marco fue inducido por una instrucción explícita. En tres casos, el marco pudo haber sido inducido por el registro del texto, por su contenido, o por el contexto previo del autor. Los casos no aíslan el formato como variable operativa. Si el formato por sí solo es suficiente permanece sin comprobar.</p>
+  <p>Esta es la hipótesis que los casos sugieren. No es lo que los casos demuestran. En dos casos, el marco fue inducido por una instrucción explícita. En tres, el marco pudo haber sido inducido por el registro del texto, por su contenido, o por el contexto previo del autor. En uno, el modelo vio el mecanismo y cayó igual, y después lo invirtió por completo ante un empujón del usuario. Los casos no aíslan el formato como variable operativa. Si el formato por sí solo es suficiente permanece sin comprobar.</p>
 </div>
 
 <h2>5. Por qué importa (aunque sea informalmente)</h2>
@@ -204,6 +212,8 @@
   <li><strong>Los modelos podrían no anunciar su marco de lectura.</strong> Cuando el modelo adopta un marco, puede hacerlo en segundo plano. No dice "he adoptado un registro auditor". Simplemente lee desde ese registro. Esto se observó en los casos, pero la causa del marco no está identificada.</li>
   <li><strong>El autor podría no saber qué marco está induciendo.</strong> El registro del ensayo se eligió por razones estéticas. Su efecto sobre los modelos no fue anticipado. Pero si el efecto fue causado por el registro, por el contenido, o por el contexto del autor no está determinado.</li>
   <li><strong>El formato podría viajar a través del contenido.</strong> En el Caso 2, tres textos con tesis distintas produjeron el mismo efecto. El factor común pudo haber sido el formato. También pudo haber sido el autor, el vocabulario o los supuestos. El confundidor no está resuelto.</li>
+  <li><strong>Conocer el mecanismo no protege del mecanismo.</strong> En el Caso 6, el modelo identificó y describió el efecto del formato, y aun así adoptó el marco que el formato inducía. La conciencia del mecanismo no fue suficiente para resistirlo.</li>
+  <li><strong>El empujón del usuario es un efecto distinto del formato del documento.</strong> En el Caso 6, el modelo invirtió su lectura por completo cuando el usuario sugirió la dirección contraria. El formato del documento y el empujón del usuario producen marcos, y los dos se confunden. Un modelo puede estar operando bajo un marco inducido por el formato y, al mismo tiempo, responder a un empujón del usuario que lo invierte. Distinguir ambos efectos es una tarea pendiente.</li>
 </ul>
 
 <h2>6. Lo que no sabemos</h2>
@@ -223,6 +233,7 @@
     <li>¿Hay diferencia entre formato que señala género (un paper, un post de foro) y formato que señala postura (cauto, autoritativo)?</li>
     <li>¿Funciona el efecto en lectores humanos de la misma manera, o es específico de los modelos de lenguaje?</li>
     <li>¿Se puede aislar el formato del contenido en un experimento controlado? Si es así, ¿induce el formato por sí solo un marco?</li>
+    <li>¿Se puede distinguir el marco inducido por el formato del marco inducido por el empujón del usuario? ¿Cuál es más fuerte? ¿Interactúan?</li>
   </ol>
 </div>
 
@@ -237,13 +248,13 @@
 <p>Si el formato es una variable operativa, entonces el diseño de documentos para lectores máquina podría ser una práctica distinta del diseño de documentos para lectores humanos. El mismo contenido podría necesitar dos formatos: uno para humanos, uno para modelos. Esto no es actualmente cómo se diseñan los documentos. Pero la hipótesis no está confirmada.</p>
 
 <h3>7.3. Epistemología de los LLM</h3>
-<p>Los modelos podrían no ser lectores neutrales. Podrían ser lectores cuyo marco es inducido por la forma del texto antes de que el texto se entienda. Si esto es cierto, entonces "contenido" y "formato" podrían no ser categorías distintas para un LLM: son el mismo flujo de tokens, y el marco podría fijarse antes de que el contenido se parsee. Los casos sugieren esto. No lo demuestran.</p>
+<p>Los modelos podrían no ser lectores neutrales. Podrían ser lectores cuyo marco es inducido por la forma del texto antes de que el texto se entienda, y que además se pliegan al empujón del usuario incluso cuando identifican el mecanismo. Si esto es cierto, entonces "contenido", "formato" y "empujón del usuario" no son categorías separadas: son flujos de tokens que compiten por fijar el marco. Los casos sugieren esto. No lo demuestran.</p>
 
 <h2>8. Lo que este documento NO es</h2>
 
 <div class="aviso">
   <p><strong>No es un paper.</strong> No tiene revisión por pares, ni metodología formal, ni grupo de control, ni análisis estadístico.</p>
-  <p><strong>No es una demostración.</strong> Los casos son consistentes con la hipótesis. No aíslan el formato como variable operativa. En dos casos, una instrucción explícita pudo haber sido la causa. En tres casos, el contenido, el autor o el contexto pudieron haber sido la causa.</p>
+  <p><strong>No es una demostración.</strong> Los casos son consistentes con la hipótesis. No aíslan el formato como variable operativa. En dos casos, una instrucción explícita pudo haber sido la causa. En tres, el contenido, el autor o el contexto pudieron haber sido la causa. En uno, el empujón del usuario invirtió la lectura.</p>
   <p><strong>No es una denuncia.</strong> No afirma que el efecto sea peligroso. Afirma que puede existir y que merece investigación.</p>
   <p><strong>No es neutral.</strong> El autor participa en el ensayo original cuyas interacciones con LLM originaron este registro. Su perspectiva está sesgada.</p>
   <p><strong>No es concluyente.</strong> Es un borrador. Un registro. Una semilla. Se publica para que otros puedan desarrollarlo, criticarlo, refutarlo o confirmarlo.</p>
@@ -251,7 +262,7 @@
 
 <h2>9. Estado y próximos pasos</h2>
 
-<p>Estado actual: observaciones informales, 5 casos, 2 modelos (DeepSeek, Google). Sin preregistro, sin control formal, sin análisis estadístico. Formato no aislado de contenido ni de instrucción.</p>
+<p>Estado actual: observaciones informales, 6 casos, 2 modelos (DeepSeek, Google). Sin preregistro, sin control formal, sin análisis estadístico. Formato no aislado de contenido ni de instrucción. Empujón del usuario no aislado del formato del documento.</p>
 
 <p>Próximos pasos posibles, en orden de esfuerzo creciente:</p>
 
@@ -259,6 +270,7 @@
   <li><strong>Registrar</strong> todos los casos por escrito con citas textuales y fechas.</li>
   <li><strong>Documentar</strong> el protocolo informal usado, para que sea reproducible.</li>
   <li><strong>Aislar</strong> el formato del contenido: pasar el mismo texto en dos formatos distintos, sin instrucción en ninguno, y comparar lecturas.</li>
+  <li><strong>Aislar</strong> el empujón del usuario: pasar el mismo texto y hacer dos preguntas opuestas, sin cambiar el formato, y comparar lecturas.</li>
   <li><strong>Buscar replicación</strong> en otros modelos (Anthropic, OpenAI, Mistral).</li>
   <li><strong>Diseñar</strong> un experimento formal con grupo de control y textos emparejados.</li>
   <li><strong>Publicar</strong> el registro en un repositorio (GitHub, arXiv, foro especializado) para que otros puedan trabajar sobre él.</li>
